@@ -76,4 +76,34 @@ public class BowlingTests
 
         Assert.Equal(150, game.Score());
     }
+
+    [Fact]
+    public void RollFullGameWithSparesEachRoundWithMaximumPoints()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 10; i++)
+        {
+            game.Roll(9);
+            game.Roll(1);
+        }
+        game.Roll(9);
+
+        Assert.Equal(190, game.Score());
+    }
+
+        [Fact]
+    public void RollFullGameWithSparesEachRoundWithMinimumPoints()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 10; i++)
+        {
+            game.Roll(1);
+            game.Roll(9);
+        }
+        game.Roll(1);
+
+        Assert.Equal(110, game.Score());
+    }
 }
