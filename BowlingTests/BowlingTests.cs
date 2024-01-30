@@ -1,5 +1,6 @@
 using Xunit;
 using BowlingApp;
+using System.Configuration.Assemblies;
 
 public class BowlingTests
 {
@@ -22,5 +23,18 @@ public class BowlingTests
         game.Roll(2);
 
         Assert.Equal(5, game.Score());
+    }
+
+    [Fact]
+    public void RollFullGameWithOnes()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 20; i++)
+        {
+            game.Roll(1);
+        }
+
+        Assert.Equal(20, game.Score());
     }
 }
