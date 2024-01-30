@@ -38,7 +38,7 @@ public class BowlingTests
         Assert.Equal(20, game.Score());
     }
 
-        [Fact]
+    [Fact]
     public void RollTwoFramesWithSpare()
     {
         Game game = new Game();
@@ -117,5 +117,21 @@ public class BowlingTests
         game.Roll(3);
 
         Assert.Equal(22, game.Score());
+    }
+
+    [Fact]
+    public void RollStrikeSpareStrikeSpareSeven()
+    {
+        Game game = new Game();
+        
+        game.Roll(10);
+        game.Roll(7);
+        game.Roll(3);
+        game.Roll(10);
+        game.Roll(3);
+        game.Roll(7);
+        game.Roll(7);
+
+        Assert.Equal(84, game.Score());
     }
 }
