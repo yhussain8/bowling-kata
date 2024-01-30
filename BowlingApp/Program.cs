@@ -10,37 +10,39 @@ namespace BowlingApp
         private int score = 0;
         private int rollNumber = 0;
         private int frameScore = 0;
-        private bool spare = false;
         private int strike = 0;
         private bool bonus = false;
 
         public void Roll(int pins)
         {
             rollNumber++;
-            score += pins;
-            frameScore += pins;
-            if (strike > 0)
-            {
-                score += pins;
-                strike--;
-            }
-            if (pins == 10)
-            {
-                strike = 2;
-                rollNumber++;
-            }
             if (rollNumber > 20)
             {
                 bonus = true;
             }
-            if (spare && !bonus)
+            else
             {
                 score += pins;
-                spare = false;
+                frameScore += pins;
             }
-            if (frameScore == 10 && strike != 2)
+            if (strike > 0)
             {
-                spare = true;
+                if (strike > 2)
+                {
+                    score += pins;
+                    strike--;
+                }
+                score += pins;
+                strike--;
+            }
+            if (pins == 10 && !bonus)
+            {
+                strike += 2;
+                rollNumber++;
+            }
+            if (frameScore == 10 && strike < 2)
+            {
+                strike++;
             }
             if (rollNumber % 2 == 0)
             {
