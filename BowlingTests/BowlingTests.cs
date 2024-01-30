@@ -8,8 +8,8 @@ public class BowlingTests
     {
         Game game = new Game();
         
-        game.roll(7);
+        game.Roll(7);
 
-        Assert.Equal(7, game.score());
+        Assert.Equal(7, game.Score());
     }
 }
