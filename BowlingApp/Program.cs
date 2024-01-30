@@ -8,18 +8,23 @@ namespace BowlingApp
     public class Game
     {
         private int score = 0;
+        private int rollNumber = 0;
         private int frameScore = 0;
-        private bool newFrame = true;
         private bool spare = false;
+        private bool bonus = false;
+
         public void Roll(int pins)
         {
+            rollNumber++;
             score += pins;
-
-            if (newFrame)
+            if (rollNumber > 20)
             {
-                newFrame = false;
+                bonus = true;
+            }
+            if (rollNumber % 2 != 0)
+            {
                 frameScore += pins;
-                if (spare)
+                if (spare && !bonus)
                 {
                     score += pins;
                     spare = false;
@@ -27,7 +32,6 @@ namespace BowlingApp
             }
             else
             {
-                newFrame = true;
                 frameScore += pins;
                 if (frameScore == 10)
                 {
