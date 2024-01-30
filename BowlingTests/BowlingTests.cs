@@ -4,8 +4,12 @@ using BowlingApp;
 public class BowlingTests
 {
     [Fact]
-    public void DummyTest()
+    public void RollOnce()
     {
-        Assert.True(true);
+        Game game = new Game();
+        
+        game.roll(7);
+
+        Assert.Equal(7, game.score());
     }
 }
