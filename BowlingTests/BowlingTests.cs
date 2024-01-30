@@ -37,4 +37,17 @@ public class BowlingTests
 
         Assert.Equal(20, game.Score());
     }
+
+        [Fact]
+    public void RollTwoFramesWithSpare()
+    {
+        Game game = new Game();
+        
+        game.Roll(7);
+        game.Roll(3);
+        game.Roll(1);
+        game.Roll(1);
+
+        Assert.Equal(13, game.Score());
+    }
 }
