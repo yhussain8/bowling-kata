@@ -33,20 +33,17 @@ namespace BowlingApp
             {
                 bonus = true;
             }
-            if (rollNumber % 2 != 0)
+            if (spare && !bonus)
             {
-                if (spare && !bonus)
-                {
-                    score += pins;
-                    spare = false;
-                }
+                score += pins;
+                spare = false;
             }
-            else
+            if (frameScore == 10 && strike != 2)
             {
-                if (frameScore == 10 && strike != 2)
-                {
-                    spare = true;
-                }
+                spare = true;
+            }
+            if (rollNumber % 2 == 0)
+            {
                 frameScore = 0;
             }
         }
