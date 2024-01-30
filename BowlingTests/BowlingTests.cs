@@ -92,7 +92,7 @@ public class BowlingTests
         Assert.Equal(190, game.Score());
     }
 
-        [Fact]
+    [Fact]
     public void RollFullGameWithSparesEachRoundWithMinimumPoints()
     {
         Game game = new Game();
@@ -105,5 +105,17 @@ public class BowlingTests
         game.Roll(1);
 
         Assert.Equal(110, game.Score());
+    }
+
+    [Fact]
+    public void RollTwoFramesWithStrike()
+    {
+        Game game = new Game();
+        
+        game.Roll(10);
+        game.Roll(3);
+        game.Roll(3);
+
+        Assert.Equal(22, game.Score());
     }
 }
