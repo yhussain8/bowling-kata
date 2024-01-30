@@ -7,15 +7,39 @@ namespace BowlingApp
 {
     public class Game
     {
-        private int _score = 0;
+        private int score = 0;
+        private int frameScore = 0;
+        private bool newFrame = true;
+        private bool spare = false;
         public void Roll(int pins)
         {
-            _score += pins;
+            score += pins;
+
+            if (newFrame)
+            {
+                newFrame = false;
+                frameScore += pins;
+                if (spare)
+                {
+                    score += pins;
+                    spare = false;
+                }
+            }
+            else
+            {
+                newFrame = true;
+                frameScore += pins;
+                if (frameScore == 10)
+                {
+                    spare = true;
+                }
+                frameScore = 0;
+            }
         }
 
         public int Score()
         {
-            return _score;
+            return  score;
         }
     }
 
