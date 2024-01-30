@@ -136,7 +136,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollPerfectGameWithoutBonusRounds()
+    public void RollFullGameWithStrikesWithoutBonusRounds()
     {
         Game game = new Game();
         
@@ -149,11 +149,11 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollPerfectGameWithBonusRounds()
+    public void RollPerfectGame()
     {
         Game game = new Game();
         
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 12; i++)
         {
             game.Roll(10);
         }
