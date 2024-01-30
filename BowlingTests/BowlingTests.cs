@@ -50,4 +50,30 @@ public class BowlingTests
 
         Assert.Equal(13, game.Score());
     }
+
+    [Fact]
+    public void RollFullGameWithSparesEachRoundWithoutBonusRound()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 20; i++)
+        {
+            game.Roll(5);
+        }
+
+        Assert.Equal(145, game.Score());
+    }
+
+    [Fact]
+    public void RollFullGameWithSparesEachRoundWithBonusRound()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 21; i++)
+        {
+            game.Roll(5);
+        }
+
+        Assert.Equal(150, game.Score());
+    }
 }
