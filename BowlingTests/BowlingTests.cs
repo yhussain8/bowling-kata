@@ -134,4 +134,30 @@ public class BowlingTests
 
         Assert.Equal(84, game.Score());
     }
+
+    [Fact]
+    public void RollPerfectGameWithoutBonusRounds()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 10; i++)
+        {
+            game.Roll(10);
+        }
+
+        Assert.Equal(270, game.Score());
+    }
+
+    [Fact]
+    public void RollPerfectGameWithBonusRounds()
+    {
+        Game game = new Game();
+        
+        for (int i = 0; i < 10; i++)
+        {
+            game.Roll(10);
+        }
+
+        Assert.Equal(300, game.Score());
+    }
 }
