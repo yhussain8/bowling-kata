@@ -1,58 +1,48 @@
-﻿using System;
-using System.ComponentModel;
-using System.Dynamic;
-using System.Net;
-
-namespace BowlingApp
+﻿namespace BowlingApp
 {
     public class Game
     {
         private int score = 0;
         private int rollNumber = 0;
         private int frameScore = 0;
-        private int strike = 0;
-        private bool bonus = false;
+        private int bonus = 0;
 
         public void Roll(int pins)
         {
-            rollNumber++;
-            if (rollNumber > 20)
+            if (bonus > 0)
             {
-                bonus = true;
+                if (bonus > 2)
+                {
+                    score += pins;
+                    bonus--;
+                }
+                score += pins;
+                bonus--;
             }
-            else
+            rollNumber++;
+            if (rollNumber < 21)
             {
                 score += pins;
                 frameScore += pins;
-            }
-            if (strike > 0)
-            {
-                if (strike > 2)
+                if (pins == 10)
                 {
-                    score += pins;
-                    strike--;
+                    bonus += 2;
+                    rollNumber++;
                 }
-                score += pins;
-                strike--;
-            }
-            if (pins == 10 && !bonus)
-            {
-                strike += 2;
-                rollNumber++;
-            }
-            if (frameScore == 10 && strike < 2)
-            {
-                strike++;
-            }
-            if (rollNumber % 2 == 0)
-            {
-                frameScore = 0;
+                else if (frameScore == 10)
+                {
+                    bonus++;
+                }
+                if (rollNumber % 2 == 0)
+                {
+                    frameScore = 0;
+                }
             }
         }
 
         public int Score()
         {
-            return  score;
+            return score;
         }
     }
 
