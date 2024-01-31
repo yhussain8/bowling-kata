@@ -4,7 +4,7 @@ using BowlingApp;
 public class BowlingTests
 {
     [Fact]
-    public void RollOnce()
+    public void Roll_Once()
     {
         Game game = new Game();
         
@@ -14,7 +14,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollTwice()
+    public void Roll_Twice()
     {
         Game game = new Game();
         
@@ -25,7 +25,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithOnes()
+    public void Roll_Full_Game_With_Ones()
     {
         Game game = new Game();
         
@@ -38,7 +38,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollTwoFramesWithSpare()
+    public void Roll_Two_Frames_With_Spare()
     {
         Game game = new Game();
         
@@ -51,7 +51,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithSparesEachRoundWithoutBonusRound()
+    public void Roll_Full_Game_With_Spares_Each_Round_Without_Bonus_Round()
     {
         Game game = new Game();
         
@@ -64,7 +64,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithSparesEachRoundWithBonusRound()
+    public void Roll_Full_Game_With_Spares_Each_Round_With_Bonus_Round()
     {
         Game game = new Game();
         
@@ -77,7 +77,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithSparesEachRoundWithMaximumPoints()
+    public void Roll_Full_Game_With_Spares_Each_Round_With_Maximum_Points()
     {
         Game game = new Game();
         
@@ -92,7 +92,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithSparesEachRoundWithMinimumPoints()
+    public void Roll_Full_Game_With_Spares_Each_Round_With_Minimum_Points()
     {
         Game game = new Game();
         
@@ -107,7 +107,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollTwoFramesWithStrike()
+    public void Roll_Two_Frames_With_Strike()
     {
         Game game = new Game();
         
@@ -119,7 +119,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollStrikeSpareStrikeSpareSeven()
+    public void Roll_Strike_Spare_Strike_Spare_Seven()
     {
         Game game = new Game();
         
@@ -135,7 +135,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithStrikesWithoutBonusRounds()
+    public void Roll_Full_Game_With_Strikes_Without_Bonus_Rounds()
     {
         Game game = new Game();
         
@@ -148,7 +148,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollPerfectGame()
+    public void Roll_Perfect_Game()
     {
         Game game = new Game();
         
@@ -161,7 +161,7 @@ public class BowlingTests
     }
 
     [Fact]
-    public void RollFullGameWithVariability()
+    public void Roll_Full_Game_With_Variability()
     {
         Game game = new Game();
         
